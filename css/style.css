@@ -1,0 +1,99 @@
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 70px;
+  max-width: 300px;
+  transition: width 0.2s;
+}
+.title {
+  transform: rotate(90deg);
+  color: #fff;
+  width: 100px;
+  text-transform: uppercase;
+}
+aside:hover {
+  width: 300px;
+  justify-content: flex-start;
+  padding-top: 70px;
+}
+aside:hover .title {
+  display: none;
+}
+aside:hover .menu-list {
+  display: flex;
+}
+
+.menu-list {
+  flex-direction: column;
+  gap: 10px;
+  display: none;
+}
+.menu-list-item {
+  color: #fff;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu-list-item:hover {
+  color: #ffbf00;
+  cursor: pointer;
+}
+.menu-list-item::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffbf00;
+  border: 2px solid black;
+  transform: rotate(45deg);
+}
