@@ -43,14 +43,18 @@ img {
 }
 
 aside {
+  height: 100vh;
+  max-width: 300px;
+  transition: width 0.2s;
+}
+.aside-link {
   display: flex;
+  height: 100%;
+  background-color: rgb(112, 112, 112);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100vh;
   width: 70px;
-  max-width: 300px;
   transition: width 0.2s;
 }
 .title {
@@ -59,24 +63,32 @@ aside {
   width: 100px;
   text-transform: uppercase;
 }
-aside:hover {
-  width: 300px;
+.aside-link:hover {
   justify-content: flex-start;
   padding-top: 70px;
 }
-aside:hover .title {
+.aside-link:hover .title {
   display: none;
 }
-aside:hover .menu-list {
-  display: flex;
+.aside-link:hover + .menu-list,
+.menu-list:hover {
+  transform: translateX(0);
 }
 
 .menu-list {
   flex-direction: column;
+  background-color: rgb(112, 112, 112);
+  height: 100%;
+  transform: translateX(-200%);
+  transition: transform 0.4s;
   gap: 10px;
-  display: none;
+  position: absolute;
+  padding: 30px 70px;
+  top: 0;
+  left: 0;
+  display: flex;
 }
-.menu-list-item {
+.menu-list-link {
   color: #fff;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -84,11 +96,10 @@ aside:hover .menu-list {
   align-items: center;
   gap: 10px;
 }
-.menu-list-item:hover {
+.menu-list-link:hover {
   color: #ffbf00;
-  cursor: pointer;
 }
-.menu-list-item::before {
+.menu-list-link::before {
   content: "";
   display: inline-block;
   width: 10px;
